@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import fetch from '../services/apiUtils';
 
 export default class Resty extends Component {
     state = {
@@ -10,6 +11,11 @@ export default class Resty extends Component {
         history: '',
     }
 
+    // on controls submit > fetch(params) > response > render response & history
+
+    // handle change controls for url, method, body
+
+    // on change for history and return
 
     render() {
         return (
