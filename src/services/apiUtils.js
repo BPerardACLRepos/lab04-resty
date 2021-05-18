@@ -3,8 +3,9 @@ export default async function ({
     method,
     body = null,
 }) {
+
     const myInit = {
-        method: method,
+        method,
     }
 
     if (method === 'PUT' || method === 'POST' && body) {
@@ -12,5 +13,6 @@ export default async function ({
     }
 
     const res = await fetch(url, myInit);
-    return res.json();
+    const json = res.json();
+    return json;
 }

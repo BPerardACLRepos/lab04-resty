@@ -5,70 +5,84 @@ const Controls = ({
     url,
     method,
     body,
+    onChange,
+    handleSubmit,
 }) => (
-    <form onSubmit={onSubmit}>
-        <input
-            name="url"
-            required="true"
-            type="url"
-            value={url}
-            onChange={onURLChange}
-        />
-        <label>
-            <input
-                name="method"
-                required="true"
-                type="radio"
-                value="GET"
-                onChange={onMethodChange}
-                checked={method === this.value}
+    <form onSubmit={handleSubmit}>
+        <div>
+            URL<input
+                name="url"
+                required={true}
+                type="url"
+                value={url}
+                onChange={onChange}
             />
-        </label>
-        <label>
-            <input
-                name="method"
-                required="true"
-                type="radio"
-                value="POST"
-                onChange={onMethodChange}
-                checked={method === this.value}
+        </div>
+        <div>
+            <label>
+                <input
+                    name="method"
+                    required={true}
+                    type="radio"
+                    value="GET"
+                    onChange={onChange}
+                    checked={method === 'GET'}
+                />
+                GET
+            </label>
+            <label>
+                <input
+                    name="method"
+                    required={true}
+                    type="radio"
+                    value="POST"
+                    onChange={onChange}
+                    checked={method === 'POST'}
+                />
+                POST
+            </label>
+            <label>
+                <input
+                    name="method"
+                    required={true}
+                    type="radio"
+                    value="PUT"
+                    onChange={onChange}
+                    checked={method === 'PUT'}
+                />
+                PUT
+            </label>
+            <label>
+                <input
+                    name="method"
+                    required={true}
+                    type="radio"
+                    value="PATCH"
+                    onChange={onChange}
+                    checked={method === 'PATCH'}
+                />
+                PATCH
+            </label>
+            <label>
+                <input
+                    name="method"
+                    required={true}
+                    type="radio"
+                    value="DELETE"
+                    onChange={onChange}
+                    checked={method === 'DELETE'}
+                />
+                DELETE
+            </label>
+        </div>
+        <div>
+            Body<input
+                name="body"
+                type="text"
+                value={body}
+                onChange={onChange}
             />
-        </label>
-        <label>
-            <input
-                name="method"
-                required="true"
-                type="radio"
-                value="PUT"
-                onChange={onMethodChange}
-                checked={method === this.value}
-            />
-        </label><label>
-            <input
-                name="method"
-                required="true"
-                type="radio"
-                value="PATCH"
-                onChange={onMethodChange}
-                checked={method === this.value}
-            />
-        </label>
-        <label>
-            <input
-                name="method"
-                required="true"
-                type="radio"
-                value="DELETE"
-                onChange={onMethodChange}
-                checked={method === this.value}
-            />
-        </label>
-        <input
-            name="body"
-            type="text"
-            value={body}
-            onChange={onBodyChange}
-        />
+        </div>
         <button aria-label="make-fetch">GO!</button>
     </form>
 );
@@ -76,7 +90,9 @@ const Controls = ({
 Controls.propTypes = {
     url: PropTypes.string.isRequired,
     method: PropTypes.string.isRequired,
-    body: PropTypes.string.isRequired
+    body: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
+    handleSubmit: PropTypes.func.isRequired
 }
 
 export default Controls;
