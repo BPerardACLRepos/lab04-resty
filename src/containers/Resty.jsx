@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Controls from '../components/Controls';
+import RenderHistory from '../components/RenderHistory';
 import RenderResponse from '../components/RenderResponse';
 import fetch from '../services/apiUtils';
 
@@ -41,7 +42,7 @@ export default class Resty extends Component {
     // on change for history and return
 
     render() {
-        const { url, method, body, apiResponse } = this.state;
+        const { url, method, body, apiResponse, history } = this.state;
         return (
             <>
                 <Controls
@@ -53,6 +54,9 @@ export default class Resty extends Component {
                 />
                 <RenderResponse
                     apiResponse={apiResponse}
+                />
+                <RenderHistory
+                    history={history}
                 />
             </>
         );
