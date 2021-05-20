@@ -2,9 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const RenderResponse = ({ apiResponse }) => (
-    <p>
-        {JSON.stringify(apiResponse)}
-    </p>
+    <div>
+        <h1>RESPONSE</h1>
+        <p aria-label="response">
+            {JSON.stringify(apiResponse)}
+        </p>
+    </div>
 );
 
 RenderResponse.propTypes = {

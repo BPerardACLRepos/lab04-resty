@@ -11,6 +11,7 @@ const Controls = ({
     <form onSubmit={handleSubmit}>
         <div>
             URL<input
+                aria-label="user-input"
                 name="url"
                 required={true}
                 type="url"
@@ -21,6 +22,7 @@ const Controls = ({
         <div>
             <label>
                 <input
+                    aria-label="get"
                     name="method"
                     required={true}
                     type="radio"
@@ -32,6 +34,7 @@ const Controls = ({
             </label>
             <label>
                 <input
+                    aria-label="post"
                     name="method"
                     required={true}
                     type="radio"
@@ -43,6 +46,7 @@ const Controls = ({
             </label>
             <label>
                 <input
+                    aria-label="put"
                     name="method"
                     required={true}
                     type="radio"
@@ -54,6 +58,7 @@ const Controls = ({
             </label>
             <label>
                 <input
+                    aria-label="patch"
                     name="method"
                     required={true}
                     type="radio"
@@ -65,6 +70,7 @@ const Controls = ({
             </label>
             <label>
                 <input
+                    aria-label="delete"
                     name="method"
                     required={true}
                     type="radio"
@@ -77,6 +83,7 @@ const Controls = ({
         </div>
         <div>
             Body<input
+                aria-label="body"
                 name="body"
                 type="text"
                 value={body}
